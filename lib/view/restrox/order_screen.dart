@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:restrox_demo/models/order_item.dart';
 import 'package:restrox_demo/models/table_model.dart';
+import 'package:restrox_demo/widgets/add_order_button.dart';
 import 'order_card.dart';
 
 class OrderScreen extends StatelessWidget {
@@ -30,19 +31,29 @@ class OrderScreen extends StatelessWidget {
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 16.0),
-          child: GridView.builder(
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 3, childAspectRatio: 0.62),
-              itemCount: tables.length,
-              itemBuilder: (context, index) {
-                return OrderCard(
-                  items: items,
-                  totalDishes: 15,
-                  totalAmount: 150.0,
-                  time: '12:30 PM',
-                  table: tables[index].name!,
-                );
-              }),
+          child: Column(
+            children: [
+              Expanded(
+                child: GridView.builder(
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 3, childAspectRatio: 0.62),
+                  itemCount: tables.length,
+                  itemBuilder: (context, index) {
+                    return OrderCard(
+                      items: items,
+                      totalDishes: 15,
+                      totalAmount: 150.0,
+                      time: '12:30 PM',
+                      table: tables[index].name!,
+                    );
+                  },
+                ),
+              ),
+              AddNewOrderButton(
+                onPressed: () {},
+              ),
+            ],
+          ),
         ),
       ),
     );

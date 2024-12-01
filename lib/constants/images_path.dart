@@ -5,4 +5,5 @@ class ImagesPath {
 
   static String menu = '${baseUrl}menu.svg';
   static String line = '${baseUrl}line.svg';
+  static String dot = '${baseUrl}dot.svg';
 }

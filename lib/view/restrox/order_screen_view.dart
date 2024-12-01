@@ -3,6 +3,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:restrox_demo/constants/images_path.dart';
 import 'package:restrox_demo/utils/color.dart';
 import 'package:restrox_demo/view/restrox/order_screen.dart';
+import 'package:restrox_demo/view/restrox/pending_kot.dart';
+import 'package:restrox_demo/view/restrox/tables_view.dart';
 import 'package:restrox_demo/widgets/add_order_button.dart';
 
 class OrderScreenView extends StatefulWidget {
@@ -99,7 +101,7 @@ class _RestroxUiState extends State<OrderScreenView>
                 tabs: const [
                   Tab(
                     child: Text(
-                      "Live Order",
+                      "Orders",
                       style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w400,
@@ -108,7 +110,7 @@ class _RestroxUiState extends State<OrderScreenView>
                   ),
                   Tab(
                     child: Text(
-                      "Table",
+                      "Tables",
                       style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w400,
@@ -117,7 +119,7 @@ class _RestroxUiState extends State<OrderScreenView>
                   ),
                   Tab(
                     child: Text(
-                      "Kot",
+                      "KOT",
                       style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w400,
@@ -131,18 +133,11 @@ class _RestroxUiState extends State<OrderScreenView>
                   controller: _tabController,
                   children: const [
                     OrderScreen(),
-                    Center(
-                        child: Text(
-                      "Pending Orders",
-                    )),
-                    Center(
-                        child: Text(
-                      "Completed Orders",
-                    )),
+                    TablesView(),
+                    PendingKot(),
                   ],
                 ),
               ),
-              AddNewOrderButton(onPressed: () {})
             ],
           ),
         ),
