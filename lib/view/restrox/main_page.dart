@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:restrox_demo/bloc/bottomNavigation/bloc/bottom_navigation_bloc.dart';
+import 'package:restrox_demo/utils/color.dart';
 import 'package:restrox_demo/utils/customlogger.dart';
 import 'package:restrox_demo/view/restrox/order_screen_view.dart';
 
@@ -82,7 +83,7 @@ class MainPage extends StatelessWidget {
                   },
                   type: BottomNavigationBarType.fixed,
                   backgroundColor: Colors.white,
-                  selectedItemColor: Colors.red,
+                  selectedItemColor: AppColors.restroXprimary,
                   unselectedItemColor: Colors.black,
                   selectedFontSize: 12,
                   unselectedFontSize: 12,
